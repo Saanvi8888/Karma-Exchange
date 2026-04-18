@@ -14,8 +14,19 @@ connectDB();
 
 const app = express();
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://karma-exchange.vercel.app"
+];
+
 app.use(cors({
-  origin: process.env.CLIENT_URL,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true,
 }));
 app.use(express.json());
@@ -30,10 +41,9 @@ app.get("/", (req, res) => {
 });
 
 const server = http.createServer(app);
-
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL,
+    origin:allowedOrigins,
     credentials: true,
   },
 });
