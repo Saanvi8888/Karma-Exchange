@@ -224,8 +224,8 @@ exports.acceptTrade = async (req, res) => {
     await trade.save();
 
     await Notification.create({
-      sender: req.user._id,      // accepter
-      receiver: trade.user,      // trade owner
+      sender: req.user._id,      
+      receiver: trade.user,      
       tradeId: trade._id,
       type: "TRADE_ACCEPTED",
       message: "Your trade has been accepted",
