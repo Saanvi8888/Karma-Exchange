@@ -1,8 +1,11 @@
 import axios from 'axios';
 
+const BASE_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+
 const testBackendConnection = async () => {
   try {
-    const response = await axios.get('http://localhost:5000/api/');
+    const response = await axios.get(`${BASE_URL}/`);
     console.log('Backend connection successful:', response.data);
     return true;
   } catch (error) {

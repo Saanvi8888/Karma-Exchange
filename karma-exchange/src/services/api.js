@@ -50,7 +50,7 @@ export const tradeAPI = {
   cancelTrade: (id) => API.post(`/trades/${id}/cancel`),
   acceptTrade: (id) => API.post(`/trades/${id}/accept`),
   getTradeById:(id)=> API.get(`/trades/${id}?t=${Date.now()}`),
-  completeTrade:(id)=>API.post(`trades/${id}/complete`),
+  completeTrade:(id)=>API.post(`/trades/${id}/complete`),
   
 };
 export const notificationAPI = {
