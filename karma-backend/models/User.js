@@ -39,16 +39,21 @@ const userSchema = new mongoose.Schema(
           category: {
             type: String,
             enum: [
-              "Tutoring & Education",
-              "Home Services",
-              "Creative Arts",
-              "Fitness and Wellness",
-              "Gardening and Outdoor",
-              "Cooking and Food",
-              "Tech and IT",
-              "Repairs and Maintenance",
-              "Transportation",
-              "Other"
+              'Programming & Tech Skills',
+              'Academic Tutoring',
+              'Languages & Communication',
+              'Design & Creative Skills',
+              'Music & Performing Arts',
+              'Fitness, Yoga & Sports',
+              'Personal Development',
+              'Business & Marketing',
+              'Cooking & Baking',
+              'Handicrafts & DIY',
+              'Photography & Video',
+              'Lifestyle & Wellness',
+              'Gardening & Sustainability',
+              'Home & Practical Skills',
+              'Other'
             ],
             default: "Other"
           }
