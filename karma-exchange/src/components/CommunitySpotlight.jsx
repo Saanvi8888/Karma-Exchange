@@ -19,11 +19,19 @@ const CommunitySpotlight = () => {
       
       {authLoading ? (
         <p className="text-sm text-gray-400 text-center py-8">Loading...</p>
-      ) : (
-        <div className="grid md:grid-cols-5 gap-5">
-          {(spotlight || []).map((user) => (
+      ) : spotlight && spotlight.length > 0 ? (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5">
+          {spotlight.map((user) => (
             <SpotlightCard key={user._id} user={user} />
           ))}
+        </div>
+      ) : (
+        <div className="flex flex-col items-center justify-center py-10 text-center">
+          <Sparkles className="w-8 h-8 text-gray-300 mb-3" />
+          <p className="text-gray-500 font-medium">No community heroes yet</p>
+          <p className="text-sm text-gray-400 mt-1">
+            Be the first to make a trade and earn karma
+          </p>
         </div>
       )}
     </div>

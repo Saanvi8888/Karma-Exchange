@@ -137,7 +137,7 @@ const CreateTrade = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
               <label className="block text-sm text-gray-600 mb-3">Category</label>
               <select
@@ -167,7 +167,7 @@ const CreateTrade = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
               <label className="block text-sm text-gray-600 mb-3">Duration</label>
               <div className="relative">
@@ -223,7 +223,6 @@ const CreateTrade = () => {
             </div>
           </div>
 
-          <postMessage/>
           <button
             type="submit"
             disabled={loading}

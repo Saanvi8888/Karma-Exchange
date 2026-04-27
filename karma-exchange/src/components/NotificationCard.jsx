@@ -35,7 +35,13 @@ const NotificationCard = () => {
       </button>
 
       {open && (
-        <div className="absolute -right-3 mt-3 w-86 bg-white shadow-xl rounded-xl  z-50">
+        <div
+          className="
+            fixed top-16 left-0 w-full z-50          /* 📱 mobile */
+            md:absolute md:right-0 md:mt-3 md:w-86 md:-translate-x-80
+            bg-white shadow-xl rounded-xl
+          "
+        >         
           <h3 className="text-lg font-semibold px-4 py-3  border border-gray-200">
             Notifications
           </h3>
@@ -80,6 +86,7 @@ const NotificationCard = () => {
           )}
         </div>
       )}
+      
     </div>
   );
 };

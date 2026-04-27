@@ -45,19 +45,20 @@ const AllTrades = () => {
               onClick={() => navigate(`/trades/${trade._id}`)}
               className="bg-white rounded-xl border border-gray-100 p-5 cursor-pointer hover:border-blue-200 hover:shadow-lg transition-all duration-200 shadow-md"
             >
-              <div className="flex items-start justify-between gap-3 mb-4">
-                <h3 className="font-medium text-gray-900 line-clamp-2">
+              
+              <div className="mb-4">
+                <h3 className="font-medium text-gray-900 line-clamp-2 mb-2">
                   {trade.title}
                 </h3>
 
-                <span className="text-xs font-medium text-blue-950 px-2 py-1 rounded-full bg-blue-100">
+                <span className="inline-block text-xs font-medium text-blue-950 px-2 py-1 rounded-full bg-blue-100">
                   {trade.category}
                 </span>
               </div>
 
-              <div className="space-y-2 text-sm mb-4">
+              <div className="space-y-3 text-sm mb-4">
                 <div className="flex gap-2">
-                  <span className="text-gray-400 min-w-[70px]">
+                  <span className="text-gray-400 w-20 shrink-0">
                     You give:
                   </span>
                   <span className="text-gray-700">{trade.offer}</span>
